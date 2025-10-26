@@ -2,7 +2,7 @@ import asyncio
 import logging
 import sqlite3
 from datetime import datetime
-from aiogram import Bot, Dispatcher, F
+from aiogram import Bot, Dispatcher
 from aiogram.types import Message
 from aiogram.filters import CommandStart, Command
 from aiogram import types
@@ -78,3 +78,4 @@ if __name__ == "__main__":
     print("Bot ishga tushdi...")
     logging.basicConfig(level=logging.INFO)
     asyncio.run(main())
+    

@@ -12,7 +12,7 @@ TOKEN = "8260223409:AAEJsckweSzRwJHW9ElLaAy1u_4lP5yen4U"
 bot = Bot(token=TOKEN)
 
 dp = Dispatcher()
-DB_PATH = 'newbot/bot/users.db'
+DB_PATH = r'C:\Users\ucer\Desktop\newbot\bot\users.db'
 
 def create():
     conn = sqlite3.connect(DB_PATH)

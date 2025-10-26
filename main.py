@@ -21,8 +21,8 @@ def create():
 CREATE TABLE IF NOT EXISTS users(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     first_name VARCHAR(500),
-    username VARCHAR(100) UNIQUE,
-    telegram_id INT,
+    username VARCHAR(100),
+    telegram_id INT UNIQUE,
     time DATE
 )
                 """)

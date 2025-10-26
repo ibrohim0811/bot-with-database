@@ -12,10 +12,10 @@ TOKEN = "8260223409:AAEJsckweSzRwJHW9ElLaAy1u_4lP5yen4U"
 bot = Bot(token=TOKEN)
 
 dp = Dispatcher()
-PATH = 'bot/users.db'
+DB_PATH = 'newbot/bot/users.db'
 
 def create():
-    conn = sqlite3.connect(PATH)
+    conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
     cur.execute("""
 CREATE TABLE IF NOT EXISTS users(
@@ -28,9 +28,9 @@ CREATE TABLE IF NOT EXISTS users(
                 """)
     conn.commit()
     conn.close()
-
+create()
 def save(firstname, username, t_id, time):
-    conn = sqlite3.connect(PATH)
+    conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
     
     try:
@@ -43,13 +43,13 @@ def save(firstname, username, t_id, time):
         return None      
     
 def delete_(username):
-    conn = sqlite3.connect(PATH)
+    conn = sqlite3.connect(DB_PATH)
     cur = conn.cursor()
     cur.execute("DELETE FROM users WHERE username = ?",(username, ))
     conn.commit()
     conn.close()
         
-create()
+
 @dp.message(CommandStart())
 async def start(msg: types.Message):
     firstname = msg.from_user.first_name
